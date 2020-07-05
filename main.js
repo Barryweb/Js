@@ -37,3 +37,74 @@ var car = {
 
 console.log("汽車品牌" + car.brand);
 car.drive();
+
+// 練習事件
+
+var box2 = document.getElementById("box2");
+
+box2.onclick = () => {
+    console.log("點擊");
+}
+box2.onmouseenter = () => {
+    console.log("滑入");
+}
+
+box2.onmouseleave = () => {
+    console.log("滑出");
+}
+
+
+// 陣列
+var arr = [20, 10 ,30];
+
+console.log("第一筆資料"+ arr[0]);
+
+arr[0]=99;
+console.log("第一筆資料"+ arr[0]);
+console.log("陣列的數量"+ arr.length);
+
+//比較運算子
+
+var a = 10;
+var b = 20;
+
+console.log( a > b);
+
+//  == 與 === 的差異
+
+var a = 7;
+var b = "7";
+console.log("兩個等於"+ (a == b));      //值(value)一樣就好 
+console.log("三個等於"+ (a === b));     //值(value)一樣且類別(type)也要一樣  (嚴格型別)
+
+
+//  && ||    &=or  |=and
+
+console.log( true && true);
+console.log( true && false);
+console.log( false && true);
+console.log( false && false);
+
+
+console.log( true || true);
+console.log( true || false);
+console.log( false || true);
+console.log( false || false);
+
+
+// 泡沫排序法
+var arr =  [20, 30, 40, 10, 50, 45, 12, 5];
+function bubbleSort(arr) {
+    var length = arr.length;
+    for (var i = 0; i < length-1; i++) {
+        for (var j = 0; j < length-1-i; j++) {
+            if(arr[j] > arr[j+1]) {
+                var temp = arr[j]
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+bubbleSort(arr);
+console.log(arr);

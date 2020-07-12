@@ -91,13 +91,120 @@ console.log( true || false);
 console.log( false || true);
 console.log( false || false);
 
+// if判斷式
+
+if(true){
+    document.write("我是判斷式<br>");
+}
+
+//if else
+var ifTest = true;
+
+if (ifTest) {
+    document.write('執行if裡面的內容</br>');
+} else {
+    document.write("不符合條件就執行這個");
+}
+
+//分數>60及格
+//分數>40補考
+//分數 被當
+
+var score = document.getElementById("score");
+var result = document.getElementById("result");
+
+score.onchange = () =>{
+    //將字串轉為整數
+    var s = parseInt(score.value);
+    if(s>=60){
+        result.innerHTML = "及格分數-"+ s;
+    }else if(s>=40){
+        result.innerHTML = "補考分數-"+ s;
+    }else{
+        result.innerHTML = "被當"+ s;
+    }
+}
+
+//設一個常數,不能更改他的值
+const pi = 3.14159131;
+// pi = 5.13165;  //不會再更改 會報錯
+
+//var與let的差異
+//let只在區塊內有效
+
+var A = 5;
+var A = 10;
+{
+    let A = 20;
+    console.log(A); //印出20
+}
+console.log(A); //印出10
+
+
+var constA = 99;
+{
+    var constA = 77;
+}
+console.log(constA);//輸出77
+
+
+let constB = 99;
+{
+    let constB = 77;
+}
+console.log(constB);//輸出99
+
+
+//迴圈
+for (var i = 0; i<10; i++){
+    console.log("迴圈"+i);//輸出0~9
+}
+
+var products = ["可樂","雪碧","芬達"];
+
+for( var i =0; i<products.length; i++){
+    console.log(products[i]);//輸出可樂雪碧芬達
+}
+
+var ps = document.getElementsByClassName("product");
+
+for (let i = 0; i < ps.length; i++) {
+    ps[i].innerText = products[i]; 
+}
+
+
+//9X9乘法表
+
+for(var i =0; i<=9; i++){
+    for(var j=0; j<=9; j++){
+        document.write(i+"*"+j+"="+(i*j)+" ");
+    }
+    document.write("</br>");
+}
+
+//*
+//**
+//***
+//**** 
+//***** 
+
+
+var n = 5;
+for(var i = 0; i<=n; i++){
+    for(var j = 0; j<i; j++){
+        document.write("*");
+    }
+    document.write("<br>");
+}
+
+
 
 // 泡沫排序法
-var arr =  [20, 30, 40, 10, 50, 45, 12, 5];
+var array =  [20, 30, 40, 10, 50, 45, 12, 5];
 function bubbleSort(arr) {
-    var length = arr.length;
-    for (var i = 0; i < length-1; i++) {
-        for (var j = 0; j < length-1-i; j++) {
+    var len = arr.length;
+    for (var i = 0; i < len-1; i++) {
+        for (var j = 0; j < len-1-i; j++) {
             if(arr[j] > arr[j+1]) {
                 var temp = arr[j]
                 arr[j] = arr[j+1];
@@ -106,5 +213,5 @@ function bubbleSort(arr) {
         }
     }
 }
-bubbleSort(arr);
-console.log(arr);
+bubbleSort(array);
+document.write(array);
